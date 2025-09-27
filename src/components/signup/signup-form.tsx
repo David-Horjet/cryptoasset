@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "../ul/button"
 
 export function SignUpForm() {
   const [formData, setFormData] = useState({
