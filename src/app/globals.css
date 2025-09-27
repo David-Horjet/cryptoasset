@@ -2,7 +2,6 @@
 /* @import "tw-animate-css"; */
 
 :root {
-  /* Converting all oklch colors to hex codes */
   --background: #ffffff;
   --foreground: #0a0a0a;
   --card: #ffffff;
