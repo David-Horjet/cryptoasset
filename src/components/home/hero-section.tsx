@@ -11,7 +11,7 @@ export default function HeroSection() {
               <span className="text-balance">Welcome to CryptoAsset — The Future of Wealth is Here</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted leading-relaxed max-w-lg">
+            <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-lg">
               Making cryptocurrency investing accessible, transparent and rewarding.
             </p>
 

@@ -9,7 +9,7 @@ export default function OurStorySection() {
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">Our Story</h2>
 
-            <p className="text-lg text-muted leading-relaxed">
+            <p className="text-lg text-foreground leading-relaxed">
               Founded with a simple vision—to make cryptocurrency investing accessible, transparent, and rewarding—our
               journey began when a group of blockchain enthusiasts and financial experts came together to bridge the gap
               between traditional finance and the digital economy.
