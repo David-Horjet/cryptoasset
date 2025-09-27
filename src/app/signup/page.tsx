@@ -1,11 +1,11 @@
 import Link from "next/link"
-import { SignUpForm } from "@/components/signup-form"
-import { SignUpHeader } from "@/components/signup-header"
+import { SignUpForm } from "@/components/signup/signup-form"
+import { AuthHeader } from "@/components/layout/auth-header"
 
 export default function SignUpPage() {
   return (
     <div className="min-h-screen bg-background">
-      <SignUpHeader />
+      <AuthHeader />
       <main className="flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">

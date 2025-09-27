@@ -1,10 +1,10 @@
+import { AuthHeader } from "@/components/layout/auth-header"
 import Link from "next/link"
-import { SignUpHeader } from "@/components/signup-header"
 
 export default function LoginPage() {
   return (
     <div className="min-h-screen bg-background">
-      <SignUpHeader />
+      <AuthHeader />
       <main className="flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
