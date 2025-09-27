@@ -35,7 +35,7 @@ export default function FeaturesSection() {
               </div>
               <div className="space-y-2">
                 <h3 className="text-xl md:text-2xl font-bold text-foreground">{feature.title}</h3>
-                <p className="text-muted leading-relaxed">{feature.description}</p>
+                <p className="text-foreground leading-relaxed">{feature.description}</p>
               </div>
             </div>
           ))}
