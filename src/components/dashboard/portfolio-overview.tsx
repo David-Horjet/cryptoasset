@@ -4,11 +4,12 @@ import PortfolioChart from "./portfolio-chart";
 
 export default function PortfolioOverview() {
   return (
-    <div className="space-y-6 rounded-2xl bg-muted p-5">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-900">My Portfolio</h1>
-        <div className="flex items-center gap-2 text-sm text-gray-500">
-          <span>Valuation date as for 18 Oct, 2024</span>
+    <div className="space-y-6 rounded-2xl bg-muted p-4 md:p-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <h1 className="text-xl md:text-2xl font-bold text-gray-900">My Portfolio</h1>
+        <div className="flex items-center gap-2 text-xs md:text-sm text-gray-500">
+          <span className="hidden sm:inline">Valuation date as for 18 Oct, 2024</span>
+          <span className="sm:hidden">18 Oct, 2024</span>
           <Button variant="ghost" size="sm" className="p-1">
             <svg
               className="w-4 h-4"
@@ -28,7 +29,7 @@ export default function PortfolioOverview() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-6 gap-2">
-        <div className="col-span-2 grid grid-cols-1 lg:grid-cols-1 gap-2">
+        <div className="col-span-1 lg:col-span-2 grid grid-cols-1 lg:grid-cols-1 gap-2">
           <Card className="bg-primary text-white p-3">
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-sm font-medium opacity-90">
@@ -101,7 +102,7 @@ export default function PortfolioOverview() {
           </Card>
         </div>
 
-        <div className="col-span-4">
+        <div className="col-span-1 lg:col-span-4">
           <PortfolioChart />
         </div>
       </div>
