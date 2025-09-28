@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ul/button";
 
 export default function DashboardHeader() {
   return (

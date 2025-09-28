@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "lucide-react"
 
 export default function DashboardSidebar() {
   const menuItems = [
@@ -23,7 +23,7 @@ export default function DashboardSidebar() {
             >
               <span>{item.name}</span>
               {item.badge && (
-                <Badge variant="secondary" className="bg-gray-800 text-white text-xs">
+                <Badge className="bg-gray-800 text-white text-xs">
                   {item.badge}
                 </Badge>
               )}

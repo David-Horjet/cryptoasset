@@ -1,15 +1,21 @@
 import { AuthHeader } from "@/components/layout/auth-header";
 import Link from "next/link";
 
-export default function LoginPage() {
+export default function ForgotPasswordPage() {
   return (
     <div className="min-h-screen bg-background">
       <AuthHeader />
       <main className="flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-foreground mb-2">Log in</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-2">
+              Forgot Password
+            </h1>
           </div>
+          <p className="mb-8 text-foreground">
+            Enter your email address and we will send you instructions to reset
+            your password
+          </p>
           <form className="space-y-4">
             <div>
               <input
@@ -34,25 +40,17 @@ export default function LoginPage() {
                 type="submit"
                 className="w-full py-4 text-base font-medium bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors"
               >
-                Log in
+                Reset Password
               </button>
             </div>
           </form>
           <div className="text-center mt-6">
+            <p className="text-muted-foreground mb-2">Remembered your password?</p>
             <Link
-              href="/forgot-password"
-              className="text-muted-foreground hover:text-primary transition-colors font-medium"
-            >
-              Forgot Password
-            </Link>
-          </div>
-          <div className="text-center mt-6">
-            <p className="text-muted-foreground mb-2">Don't have an account?</p>
-            <Link
-              href="/signup"
+              href="/login"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
-              Sign up
+              Log in
             </Link>
           </div>
         </div>

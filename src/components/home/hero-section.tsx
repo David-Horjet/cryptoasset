@@ -1,4 +1,5 @@
-import HeroIllustration from "./hero-illustration"
+import Link from "next/link";
+import HeroIllustration from "./hero-illustration";
 
 export default function HeroSection() {
   return (
@@ -8,20 +9,27 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              <span className="text-balance">Welcome to CryptoAsset — The Future of Wealth is Here</span>
+              <span className="text-balance">
+                Welcome to CryptoAsset, <br /> The Future of Wealth is Here
+              </span>
             </h1>
 
             <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-lg">
-              Making cryptocurrency investing accessible, transparent and rewarding.
+              Making cryptocurrency investing accessible, transparent and
+              rewarding.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 md:px-10 md:py-4 rounded-lg font-semibold text-lg transition-colors">
-                Create Account
-              </button>
-              <button className="border-2 border-gray-300 hover:border-primary text-foreground hover:text-primary px-8 py-3 md:px-10 md:py-4 rounded-lg font-semibold text-lg transition-colors">
-                Learn More
-              </button>
+              <Link href="/signup">
+                <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 md:px-10 md:py-4 rounded-lg font-semibold text-lg transition-colors">
+                  Create Account
+                </button>
+              </Link>
+              <Link href="/#about">
+                <button className="border-2 border-gray-300 hover:border-primary text-foreground hover:text-primary px-8 py-3 md:px-10 md:py-4 rounded-lg font-semibold text-lg transition-colors">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -32,5 +40,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
