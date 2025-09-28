@@ -1,7 +1,9 @@
 import { AuthHeader } from "@/components/layout/auth-header";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter()
   return (
     <div className="min-h-screen bg-background">
       <AuthHeader />
@@ -10,7 +12,7 @@ export default function LoginPage() {
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-foreground mb-2">Log in</h1>
           </div>
-          <form className="space-y-4">
+          <form onSubmit={() => router.push('/dashboard')} className="space-y-4">
             <div>
               <input
                 type="email"
