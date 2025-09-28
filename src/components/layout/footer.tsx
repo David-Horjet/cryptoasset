@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import { Facebook, Twitter, Linkedin, Instagram, Key, ChartBar, Globe } from "lucide-react"
 
 const footerLinks = {
   product: [
@@ -49,7 +49,7 @@ export default function Footer() {
                 </div>
                 <span className="text-xl font-bold text-foreground">CryptoAsset</span>
               </div>
-              <p className="text-muted leading-relaxed max-w-sm">
+              <p className="text-foreground leading-relaxed max-w-sm">
                 Making cryptocurrency investing accessible, transparent, and rewarding for everyone.
               </p>
               <div className="flex space-x-4">
@@ -72,7 +72,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.product.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-muted hover:text-foreground transition-colors">
+                    <a href={link.href} className="text-foreground hover:text-foreground transition-colors">
                       {link.name}
                     </a>
                   </li>
@@ -85,7 +85,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-muted hover:text-foreground transition-colors">
+                    <a href={link.href} className="text-foreground hover:text-foreground transition-colors">
                       {link.name}
                     </a>
                   </li>
@@ -98,7 +98,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.resources.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-muted hover:text-foreground transition-colors">
+                    <a href={link.href} className="text-foreground hover:text-foreground transition-colors">
                       {link.name}
                     </a>
                   </li>
@@ -111,7 +111,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.legal.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-muted hover:text-foreground transition-colors">
+                    <a href={link.href} className="text-foreground hover:text-foreground transition-colors">
                       {link.name}
                     </a>
                   </li>
@@ -124,11 +124,11 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-muted">© 2025 CryptoAsset. All rights reserved.</p>
-            <div className="flex items-center space-x-6 text-sm text-muted">
-              <span>🔒 Bank-level security</span>
-              <span>📊 Real-time data</span>
-              <span>🌍 Global access</span>
+            <p className="text-sm text-foreground">© 2025 CryptoAsset. All rights reserved.</p>
+            <div className="flex items-center space-x-6 text-sm text-foreground">
+              <span><Key/> Bank-level security</span>
+              <span><ChartBar/> Real-time data</span>
+              <span><Globe/> Global access</span>
             </div>
           </div>
         </div>

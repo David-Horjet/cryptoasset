@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../ul/button";
 
 export default function CTASection() {
@@ -9,17 +10,23 @@ export default function CTASection() {
             Ready to Start Your Crypto Journey?
           </h2>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto text-pretty">
-            Join thousands of investors who trust CryptoAsset for their digital wealth management. Start building your
-            portfolio today.
+            Join thousands of investors who trust CryptoAsset for their digital
+            wealth management. Start building your portfolio today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button size="lg" variant="default" className="w-full sm:w-auto px-8 py-3 text-lg font-semibold">
-              Create Account
-            </Button>
+            <Link href={"/signup"}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto px-8 py-3 text-lg font-semibold"
+              >
+                Create Account
+              </Button>
+            </Link>
             <Button
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto px-8 py-3 text-lg font-semibold bg-transparent border-white text-white hover:bg-white hover:text-primary"
+              className="w-full sm:w-auto px-8 py-3 text-lg font-semibold bg-transparent border-white text-foreground hover:bg-white hover:text-primary"
             >
               Schedule Demo
             </Button>
@@ -27,5 +34,5 @@ export default function CTASection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
