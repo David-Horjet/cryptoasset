@@ -1,8 +1,12 @@
-import { Badge } from "lucide-react"
-import { Button } from "../ul/button"
+"use client";
 
+import { useState } from "react";
+import { Book, CupSodaIcon } from "lucide-react";
+import { Button } from "../ul/button";
+import { Badge } from "../ul/badge";
 
 export default function InvestmentsTable() {
+  const [showMobileCards, setShowMobileCards] = useState(false);
   const investments = [
     {
       id: 1,
@@ -12,7 +16,7 @@ export default function InvestmentsTable() {
       invested: "$12,100",
       netValue: "$41,000",
       multiple: "3.0x",
-      logo: "📚",
+      logo: <Book />,
     },
     {
       id: 2,
@@ -22,18 +26,25 @@ export default function InvestmentsTable() {
       invested: "$4,850",
       netValue: "$13,000",
       multiple: "3.0x",
-      logo: "🏆",
+      logo: <CupSodaIcon />,
     },
-  ]
+  ];
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200">
-      <div className="p-6 border-b border-gray-200">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-gray-900">Investments</h2>
-          <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm">
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div className="bg-muted rounded-lg">
+      <div className="p-4 md:p-6 border-b border-gray-200">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <h2 className="text-lg md:text-xl font-semibold text-gray-900">
+            Investments
+          </h2>
+          <div className="flex items-center gap-2 md:gap-3 flex-wrap">
+            <Button variant="ghost" size="sm" className="p-2">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -42,8 +53,13 @@ export default function InvestmentsTable() {
                 />
               </svg>
             </Button>
-            <Button variant="ghost" size="sm">
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <Button variant="ghost" size="sm" className="p-2">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -52,22 +68,31 @@ export default function InvestmentsTable() {
                 />
               </svg>
             </Button>
-            <Button variant="outline" size="sm">
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-xs md:text-sm bg-transparent"
+            >
               Export CSV
             </Button>
-            <Button className="bg-black text-white hover:bg-gray-800">Add Investment</Button>
+            <Button className="bg-black text-white hover:bg-gray-800 text-xs md:text-sm">
+              <span className="hidden sm:inline">Add Investment</span>
+              <span className="sm:hidden">Add</span>
+            </Button>
           </div>
         </div>
       </div>
 
-      <div className="overflow-x-auto">
+      <div className="hidden md:block overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-gray-50">
+          <thead className="bg-muted">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Company/Fund
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Status
+              </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Invest Date
               </th>
@@ -82,7 +107,7 @@ export default function InvestmentsTable() {
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-muted divide-y divide-gray-200">
             {investments.map((investment) => (
               <tr key={investment.id} className="hover:bg-gray-50">
                 <td className="px-6 py-4 whitespace-nowrap">
@@ -90,7 +115,9 @@ export default function InvestmentsTable() {
                     <div className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center mr-3">
                       <span className="text-sm">{investment.logo}</span>
                     </div>
-                    <span className="font-medium text-gray-900">{investment.company}</span>
+                    <span className="font-medium text-gray-900">
+                      {investment.company}
+                    </span>
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
@@ -98,15 +125,68 @@ export default function InvestmentsTable() {
                     {investment.status}
                   </Badge>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{investment.investDate}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{investment.invested}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{investment.netValue}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{investment.multiple}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  {investment.investDate}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  {investment.invested}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  {investment.netValue}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  {investment.multiple}
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      <div className="md:hidden">
+        {investments.map((investment) => (
+          <div
+            key={investment.id}
+            className="p-4 border-b border-gray-200 last:border-b-0"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center mr-3">
+                  <span className="text-sm">{investment.logo}</span>
+                </div>
+                <span className="font-medium text-gray-900">
+                  {investment.company}
+                </span>
+              </div>
+              <Badge
+                variant="secondary"
+                className="bg-green-100 text-green-800 text-xs"
+              >
+                {investment.status}
+              </Badge>
+            </div>
+            <div className="grid grid-cols-2 gap-3 text-sm">
+              <div>
+                <span className="text-gray-500">Invested:</span>
+                <div className="font-medium">{investment.invested}</div>
+              </div>
+              <div>
+                <span className="text-gray-500">Net Value:</span>
+                <div className="font-medium">{investment.netValue}</div>
+              </div>
+              <div>
+                <span className="text-gray-500">Multiple:</span>
+                <div className="font-medium">{investment.multiple}</div>
+              </div>
+              <div>
+                <span className="text-gray-500">Date:</span>
+                <div className="font-medium text-xs">
+                  {investment.investDate}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }

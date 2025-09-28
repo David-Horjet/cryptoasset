@@ -1,9 +1,11 @@
+"use client";
+
 import { AuthHeader } from "@/components/layout/auth-header";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className="min-h-screen bg-background">
       <AuthHeader />
@@ -12,7 +14,9 @@ export default function LoginPage() {
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-foreground mb-2">Log in</h1>
           </div>
-          <form onSubmit={() => router.push('/dashboard')} className="space-y-4">
+          <div
+            className="space-y-4"
+          >
             <div>
               <input
                 type="email"
@@ -33,13 +37,14 @@ export default function LoginPage() {
 
             <div className="pt-2">
               <button
+                onClick={() => router.push("/dashboard")}
                 type="submit"
                 className="w-full py-4 text-base font-medium bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors"
               >
                 Log in
               </button>
             </div>
-          </form>
+          </div>
           <div className="text-center mt-6">
             <Link
               href="/forgot-password"

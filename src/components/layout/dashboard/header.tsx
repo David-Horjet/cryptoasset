@@ -1,19 +1,31 @@
+"use client"
+
 import { Button } from "@/components/ul/button";
 
-export default function DashboardHeader() {
+interface DashboardHeaderProps {
+  sidebarOpen: boolean
+  setSidebarOpen: (open: boolean) => void
+}
+
+export default function DashboardHeader({ sidebarOpen, setSidebarOpen }: DashboardHeaderProps) {
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4">
+    <header className="bg-white border-b border-gray-200 px-4 md:px-6 py-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
+        <Button variant="ghost" size="sm" className="lg:hidden p-2" onClick={() => setSidebarOpen(!sidebarOpen)}>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </Button>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
               <span className="text-white font-medium">N</span>
             </div>
             <span className="font-semibold text-gray-900">Natalia</span>
           </div>
         </div>
 
-        <nav className="flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-1">
           <Button variant="default" className="bg-black text-white hover:bg-gray-800 rounded-full px-6">
             Investments
           </Button>
@@ -25,8 +37,8 @@ export default function DashboardHeader() {
           </Button>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="p-2">
+        <div className="flex items-center gap-2 md:gap-3">
+          <Button variant="ghost" size="sm" className="p-1.5 md:p-2">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -36,7 +48,7 @@ export default function DashboardHeader() {
               />
             </svg>
           </Button>
-          <Button variant="ghost" size="sm" className="p-2">
+          <Button variant="ghost" size="sm" className="p-1.5 md:p-2">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -47,7 +59,7 @@ export default function DashboardHeader() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </Button>
-          <Button variant="ghost" size="sm" className="p-2">
+          <Button variant="ghost" size="sm" className="p-1.5 md:p-2">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"

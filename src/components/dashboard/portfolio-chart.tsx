@@ -8,7 +8,7 @@ export default function PortfolioChart() {
   const filters = ["All Time", "Invested", "Released", "Last 90 days"]
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6">
+    <div className="bg-white h-full rounded-lg border border-[#f2e9df] p-6">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-4">
           {filters.map((filter) => (
@@ -40,14 +40,14 @@ export default function PortfolioChart() {
         <div className="ml-8 h-full relative">
           {/* Chart bars */}
           <div className="absolute bottom-0 left-0 w-full h-full flex items-end justify-between">
-            <div className="w-12 bg-gray-200 h-8"></div>
-            <div className="w-12 bg-gray-200 h-12"></div>
-            <div className="w-12 bg-gray-200 h-16"></div>
-            <div className="w-12 bg-gray-200 h-20"></div>
-            <div className="w-12 bg-gray-200 h-24"></div>
-            <div className="w-12 bg-gray-200 h-28"></div>
-            <div className="w-12 bg-gray-200 h-32"></div>
-            <div className="w-12 bg-gray-200 h-36"></div>
+            <div className="w-12 bg-[#f2e9df] h-8"></div>
+            <div className="w-12 bg-[#f2e9df] h-12"></div>
+            <div className="w-12 bg-[#f2e9df] h-16"></div>
+            <div className="w-12 bg-[#f2e9df] h-20"></div>
+            <div className="w-12 bg-[#f2e9df] h-24"></div>
+            <div className="w-12 bg-[#f2e9df] h-28"></div>
+            <div className="w-12 bg-[#f2e9df] h-32"></div>
+            <div className="w-12 bg-[#f2e9df] h-36"></div>
             <div className="w-12 bg-primary h-48"></div>
             <div className="w-12 bg-primary h-52"></div>
             <div className="w-12 bg-primary h-56"></div>

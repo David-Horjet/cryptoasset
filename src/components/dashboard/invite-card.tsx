@@ -2,7 +2,7 @@ import { Button } from "../ul/button";
 
 export default function InviteCard() {
   return (
-    <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg p-6 relative overflow-hidden">
+    <div className="bg-[#f2e9df] rounded-lg p-6 relative overflow-hidden">
       <div className="absolute top-4 right-4">
         <div className="w-16 h-16 bg-primary rounded-full opacity-20"></div>
       </div>
