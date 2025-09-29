@@ -1,30 +1,31 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "../ul/button"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export function SignUpForm() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     password: "",
-  })
+  });
+  const router = useRouter();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission here
-    console.log("Form submitted:", formData)
-  }
+    console.log("Form submitted:", formData);
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -65,10 +66,14 @@ export function SignUpForm() {
       </div>
 
       <div className="pt-2">
-        <Button type="submit" className="w-full py-4 text-base font-medium">
-          Sign up
-        </Button>
+        <button
+          onClick={() => router.push("/dashboard")}
+          type="submit"
+          className="w-full py-4 text-base font-medium bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors"
+        >
+          Sign Up
+        </button>
       </div>
     </form>
-  )
+  );
 }

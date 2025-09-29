@@ -12,7 +12,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-white">
       <DashboardHeader sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-      <div className="flex">
+      <div className="flex h-full">
         <DashboardSidebar  sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
         <main className="flex-1 p-4 md:p-6 lg:ml-0">
           <div className="max-w-7xl mx-auto">

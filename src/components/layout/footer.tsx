@@ -124,7 +124,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-foreground">© 2025 CryptoAsset. All rights reserved.</p>
+            <p className="text-sm text-foreground">© 2014 CryptoAsset. All rights reserved.</p>
             <div className="flex items-center space-x-6 text-sm text-foreground">
               <span><Key/> Bank-level security</span>
               <span><ChartBar/> Real-time data</span>

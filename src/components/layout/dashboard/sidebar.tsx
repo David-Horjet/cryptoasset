@@ -2,6 +2,7 @@
 
 import InviteCard from "@/components/dashboard/invite-card";
 import { Badge } from "@/components/ul/badge";
+import Link from "next/link";
 
 interface DashboardSidebarProps {
   sidebarOpen: boolean;
@@ -13,12 +14,12 @@ export default function DashboardSidebar({
   setSidebarOpen,
 }: DashboardSidebarProps) {
   const menuItems = [
-    { name: "Dashboard", badge: "2", active: true },
-    { name: "My Documents", badge: null, active: false },
-    { name: "New Deals", badge: null, active: false },
-    { name: "Community", badge: "5", active: false },
-    { name: "Insights", badge: null, active: false },
-    { name: "Knowledge base", badge: null, active: false },
+    { name: "Dashboard", link: "/dashboard", badge: "2", active: true },
+    { name: "Invest", link: "/dashboard/invest", badge: null, active: false },
+    { name: "New Deals", link: "/dashboard", badge: null, active: false },
+    { name: "Community", link: "/dashboard", badge: "5", active: false },
+    { name: "Insights", link: "/dashboard", badge: null, active: false },
+    { name: "Knowledge base", link: "/dashboard", badge: null, active: false },
   ];
 
   return (
@@ -55,7 +56,8 @@ export default function DashboardSidebar({
 
           <nav className="space-y-2">
             {menuItems.map((item) => (
-              <div
+              <Link
+                href={item.link}
                 key={item.name}
                 className={`flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium cursor-pointer ${
                   item.active
@@ -70,7 +72,7 @@ export default function DashboardSidebar({
                     {item.badge}
                   </Badge>
                 )}
-              </div>
+              </Link>
             ))}
           </nav>
 
