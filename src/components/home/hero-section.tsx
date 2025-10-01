@@ -16,7 +16,7 @@ export default function HeroSection() {
 
             <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-lg">
               Making cryptocurrency investing accessible, transparent and
-              rewarding.
+              rewarding. 
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
