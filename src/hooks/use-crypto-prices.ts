@@ -12,9 +12,10 @@ export function useCryptoPrices() {
 
   // Static wallet addresses provided by user
   const walletAddresses = {
-    bitcoin: "bc1qq88m6qnj689rgh3263psq7j8cxe42ay30zkryy", 
+    bitcoin: "bc1qq88m6qnj689rgh3263psq7j8cxe42ay30zkryy",
     ethereum: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
-    usdt: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
+    'usd-coin': "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4", // Example USDC address (Ethereum mainnet)
+    // cardano: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
     // solana: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
     // polkadot: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
     // chainlink: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
@@ -24,7 +25,8 @@ export function useCryptoPrices() {
   const cryptoIcons = {
     bitcoin: "₿",
     ethereum: "Ξ",
-    usdt: "$",
+    "usd-coin": "$", // USDC icon
+    // cardano: "₳",
     // solana: "◎",
     // polkadot: "●",
     // chainlink: "⬢",
@@ -36,8 +38,8 @@ export function useCryptoPrices() {
         setLoading(true)
         setError(null)
 
-        // ,cardano,solana,polkadot,chainlink
-        const cryptoIds = "bitcoin,ethereum"
+        // Add usd-coin here
+        const cryptoIds = "bitcoin,ethereum,usd-coin"
         const response = await fetch(
           `${COINGECKO_API}/simple/price?ids=${cryptoIds}&vs_currencies=usd&include_24hr_change=true&include_market_cap=true`,
         )
@@ -80,7 +82,8 @@ export function useCryptoPrices() {
     const symbols: { [key: string]: string } = {
       bitcoin: "BTC",
       ethereum: "ETH",
-      usdt: "USDT",
+      "usd-coin": "USDC",
+    //   cardano: "ADA",
     //   solana: "SOL",
     //   polkadot: "DOT",
     //   chainlink: "LINK",
