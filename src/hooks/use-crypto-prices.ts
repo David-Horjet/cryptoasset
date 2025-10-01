@@ -80,7 +80,7 @@ export function useCryptoPrices() {
     const symbols: { [key: string]: string } = {
       bitcoin: "BTC",
       ethereum: "ETH",
-    //   cardano: "ADA",
+      usdt: "USDT",
     //   solana: "SOL",
     //   polkadot: "DOT",
     //   chainlink: "LINK",
