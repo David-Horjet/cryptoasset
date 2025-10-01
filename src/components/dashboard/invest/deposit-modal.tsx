@@ -146,7 +146,7 @@ export default function DepositModal({ crypto, onClose }: DepositModalProps) {
                 {crypto.symbol === "BTC" ? "0.001" : crypto.symbol === "ETH" ? "0.01" : "1"} {crypto.symbol}
               </p>
             </div>
-          </div>
+          </div> 
 
           {/* Action Buttons */}
           <div className="flex space-x-3">
