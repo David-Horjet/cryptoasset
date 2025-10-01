@@ -14,7 +14,7 @@ export function useCryptoPrices() {
   const walletAddresses = {
     bitcoin: "bc1qq88m6qnj689rgh3263psq7j8cxe42ay30zkryy",
     ethereum: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
-    // cardano: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
+    usdt: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
     // solana: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
     // polkadot: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
     // chainlink: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
@@ -24,7 +24,7 @@ export function useCryptoPrices() {
   const cryptoIcons = {
     bitcoin: "₿",
     ethereum: "Ξ",
-    // cardano: "₳",
+    usdt: "$",
     // solana: "◎",
     // polkadot: "●",
     // chainlink: "⬢",
