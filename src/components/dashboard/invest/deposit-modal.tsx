@@ -138,7 +138,7 @@ export default function DepositModal({ crypto, onClose }: DepositModalProps) {
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div className="text-center p-3 bg-gray-50 rounded-lg">
               <p className="text-xs text-gray-500 mb-1">Network</p>
-              <p className="font-medium text-gray-900">{crypto.name}</p>
+              <p className="font-medium text-gray-900">{crypto.symbol === "BTC" ? "BTC" : crypto.symbol === "ETH" ? "ETH" : "ERC20"}</p>
             </div>
             <div className="text-center p-3 bg-gray-50 rounded-lg">
               <p className="text-xs text-gray-500 mb-1">Min Deposit</p>
