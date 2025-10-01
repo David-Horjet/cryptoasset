@@ -10,7 +10,7 @@ export function useCryptoPrices() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  // Static wallet addresses provided by user
+  // Static wallet addresses provided by user   
   const walletAddresses = {
     bitcoin: "bc1qq88m6qnj689rgh3263psq7j8cxe42ay30zkryy", 
     ethereum: "0xFe5adcB8D10fb4f6C69a64C374f546f75bA014B4",
