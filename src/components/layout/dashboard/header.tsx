@@ -19,9 +19,9 @@ export default function DashboardHeader({ sidebarOpen, setSidebarOpen }: Dashboa
           </Button>
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
-              <span className="text-white font-medium">N</span>
+              <span className="text-white font-medium">U</span>
             </div>
-            <span className="font-semibold text-gray-900">Natalia</span>
+            <span className="font-semibold text-gray-900">User</span>
           </div>
         </div>
 

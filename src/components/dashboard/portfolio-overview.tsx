@@ -49,7 +49,7 @@ export default function PortfolioOverview() {
                 />
               </svg>
             </div>
-            <div className="text-3xl font-bold mb-1">$62,440</div>
+            <div className="text-3xl font-bold mb-1">$0</div>
             <div className="text-sm opacity-75">Net Value: 61k</div>
           </Card>
 
@@ -72,7 +72,7 @@ export default function PortfolioOverview() {
                 />
               </svg>
             </div>
-            <div className="text-3xl font-bold text-gray-900 mb-1">$17,950</div>
+            <div className="text-3xl font-bold text-gray-900 mb-1">$0</div>
             <div className="text-sm text-gray-500">
               2 investments • 2 startups
             </div>
@@ -97,8 +97,8 @@ export default function PortfolioOverview() {
                 />
               </svg>
             </div>
-            <div className="text-3xl font-bold text-gray-900 mb-1">3.0x</div>
-            <div className="text-sm text-green-600">+300%</div>
+            <div className="text-3xl font-bold text-gray-900 mb-1">0x</div>
+            <div className="text-sm text-green-600">+0%</div>
           </Card>
         </div>
 
