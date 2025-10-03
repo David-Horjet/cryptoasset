@@ -15,7 +15,7 @@ export default function DashboardPage() {
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
       />
-      <div className="flex h-full">
+      <div className="flex min-h-[90vh]">
         <DashboardSidebar
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}

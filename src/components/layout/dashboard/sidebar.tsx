@@ -89,7 +89,7 @@ export default function DashboardSidebar({
             ))}
           </nav>
 
-          <div className="pt-4 border-t border-gray-200 mt-auto">
+          <div className="pt-4 border-t border-gray-200 mb-5 mt-auto">
             <Button
               variant="ghost"
               className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50"
