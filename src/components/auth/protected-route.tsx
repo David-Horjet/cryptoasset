@@ -5,17 +5,23 @@ import type React from "react"
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { useAppSelector, useAppDispatch } from "@/lib/hooks"
-import { loadUserFromStorage } from "@/lib/features/auth/authSlice"
+import { loadUserFromStorage, fetchProfile } from "@/lib/features/auth/authSlice"
 
 export function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const dispatch = useAppDispatch()
-  const { isAuthenticated, accessToken } = useAppSelector((state) => state.auth)
+  const { isAuthenticated, accessToken, user } = useAppSelector((state) => state.auth)
 
   useEffect(() => {
     // Load user from storage on mount
     dispatch(loadUserFromStorage())
   }, [dispatch])
+
+  useEffect(() => {
+    if (isAuthenticated && accessToken && !user) {
+      dispatch(fetchProfile())
+    }
+  }, [isAuthenticated, accessToken, user, dispatch])
 
   useEffect(() => {
     // Check if user is authenticated

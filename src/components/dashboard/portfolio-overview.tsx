@@ -1,22 +1,24 @@
-import { Button } from "../ul/button";
-import { Card } from "../ul/card";
-import PortfolioChart from "./portfolio-chart";
+"use client"
+
+import { useAppSelector } from "@/lib/hooks"
+import { Button } from "../ul/button"
+import { Card } from "../ul/card"
+import PortfolioChart from "./portfolio-chart"
 
 export default function PortfolioOverview() {
+  const { user } = useAppSelector((state) => state.auth)
+
   return (
-    <div className="space-y-6 rounded-2xl bg-muted p-4 md:p-5">
+    <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <h1 className="text-xl md:text-2xl font-bold text-gray-900">My Portfolio</h1>
+        <h1 className="text-xl md:text-2xl font-bold text-gray-900">
+          {user?.fullname ? `${user.fullname}'s Portfolio` : "My Portfolio"}
+        </h1>
         <div className="flex items-center gap-2 text-xs md:text-sm text-gray-500">
           <span className="hidden sm:inline">Valuation date as for 18 Oct, 2024</span>
           <span className="sm:hidden">18 Oct, 2024</span>
           <Button variant="ghost" size="sm" className="p-1">
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -28,84 +30,74 @@ export default function PortfolioOverview() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-6 gap-2">
-        <div className="col-span-1 lg:col-span-2 grid grid-cols-1 lg:grid-cols-1 gap-2">
-          <Card className="bg-primary text-white p-3">
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-sm font-medium opacity-90">
-                Portfolio Value
-              </h3>
-              <svg
-                className="w-4 h-4 opacity-70"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <Card className="bg-primary text-white p-4 md:p-6">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-sm font-medium opacity-90">Portfolio Value</h3>
+            <svg className="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <div className="text-3xl font-bold mb-1">$0</div>
+          <div className="text-sm opacity-75">Net Value: $0</div>
+        </Card>
+
+        <Card className="p-4 md:p-6">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-sm font-medium text-gray-600">Total Invested</h3>
+            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <div className="text-3xl font-bold text-gray-900 mb-1">$0</div>
+          <div className="text-sm text-gray-500">0 investments • 0 startups</div>
+        </Card>
+
+        <Card className="p-4 md:p-6">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-sm font-medium text-gray-600">Net Multiple</h3>
+            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <div className="text-3xl font-bold text-gray-900 mb-1">0.0x</div>
+          <div className="text-sm text-gray-500">+0%</div>
+        </Card>
+
+        <div className="bg-black text-white p-4 md:p-6 rounded-lg sm:col-span-2 lg:col-span-1">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
                 />
               </svg>
             </div>
-            <div className="text-3xl font-bold mb-1">$0</div>
-            <div className="text-sm opacity-75">Net Value: 61k</div>
-          </Card>
-
-          <Card className="bg-white p-3">
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-sm font-medium text-gray-600">
-                Total Invested
-              </h3>
-              <svg
-                className="w-4 h-4 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <div className="text-3xl font-bold text-gray-900 mb-1">$0</div>
-            <div className="text-sm text-gray-500">
-              2 investments • 2 startups
-            </div>
-          </Card>
-
-          <Card className="bg-white p-3">
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-sm font-medium text-gray-600">
-                Net Multiple
-              </h3>
-              <svg
-                className="w-4 h-4 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <div className="text-3xl font-bold text-gray-900 mb-1">0x</div>
-            <div className="text-sm text-green-600">+0%</div>
-          </Card>
-        </div>
-
-        <div className="col-span-1 lg:col-span-4">
-          <PortfolioChart />
+            <h3 className="font-semibold">Tax Information</h3>
+          </div>
+          <div className="text-sm opacity-75">Pending</div>
         </div>
       </div>
+
+      <PortfolioChart />
     </div>
-  );
+  )
 }

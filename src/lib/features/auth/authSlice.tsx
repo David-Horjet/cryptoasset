@@ -136,6 +136,35 @@ export const resetPassword = createAsyncThunk(
   },
 )
 
+export const fetchProfile = createAsyncThunk("auth/fetchProfile", async (_, { getState, rejectWithValue }) => {
+  try {
+    const state = getState() as { auth: AuthState }
+    const token = state.auth.accessToken
+
+    if (!token) {
+      return rejectWithValue("No access token available")
+    }
+
+    const response = await fetch(`${API_BASE_URL}/auth/profile`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+
+    const data = await response.json()
+
+    if (!response.ok) {
+      return rejectWithValue(data.message || "Failed to fetch profile")
+    }
+
+    return data.data
+  } catch (error: any) {
+    return rejectWithValue(error.message || "Network error")
+  }
+})
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -227,6 +256,21 @@ const authSlice = createSlice({
         state.error = null
       })
       .addCase(resetPassword.rejected, (state, action) => {
+        state.isLoading = false
+        state.error = action.payload as string
+      })
+
+    builder
+      .addCase(fetchProfile.pending, (state) => {
+        state.isLoading = true
+        state.error = null
+      })
+      .addCase(fetchProfile.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.user = action.payload
+        state.error = null
+      })
+      .addCase(fetchProfile.rejected, (state, action) => {
         state.isLoading = false
         state.error = action.payload as string
       })
