@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "../ul/button";
 
 export default function InvestmentsTable() {
@@ -79,9 +80,11 @@ export default function InvestmentsTable() {
           <p className="text-xs text-gray-400 mb-4">
             Start investing to see your portfolio grow
           </p>
-          <Button className="bg-black text-white hover:bg-gray-800">
-            Add Your First Investment
-          </Button>
+          <Link href={"/ashboard/ivest"}>
+            <Button className="bg-black text-white hover:bg-gray-800">
+              Add Your First Investment
+            </Button>
+          </Link>
         </div>
       ) : (
         <>

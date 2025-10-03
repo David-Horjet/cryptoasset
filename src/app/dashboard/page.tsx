@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import ActivitiesPanel from "@/components/dashboard/activities-panel";
 import InvestmentsTable from "@/components/dashboard/investments-table";
@@ -8,12 +8,18 @@ import DashboardSidebar from "@/components/layout/dashboard/sidebar";
 import { useState } from "react";
 
 export default function DashboardPage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <div className="min-h-screen bg-white">
-      <DashboardHeader sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+      <DashboardHeader
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
       <div className="flex h-full">
-        <DashboardSidebar  sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
+        <DashboardSidebar
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+        />
         <main className="flex-1 p-4 md:p-6 lg:ml-0">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col xl:flex-row gap-5">
@@ -24,9 +30,9 @@ export default function DashboardPage() {
                 </div>
               </div>
               <div className="xl:w-80 space-y-4">
-                <div className="bg-black text-white p-6 rounded-lg">
+                <div className="bg-black text-white p-4 md:p-6 rounded-lg sm:col-span-2 lg:col-span-1">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                    <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center">
                       <svg
                         className="w-4 h-4"
                         fill="none"
@@ -37,13 +43,13 @@ export default function DashboardPage() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d="M5 13l4 4L19 7"
+                          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
                         />
                       </svg>
                     </div>
                     <h3 className="font-semibold">Tax Information</h3>
                   </div>
-                  <div className="text-sm opacity-75">Submitted</div>
+                  <div className="text-sm opacity-75">Pending</div>
                 </div>
                 <ActivitiesPanel />
               </div>
@@ -52,7 +58,10 @@ export default function DashboardPage() {
         </main>
       </div>
       {sidebarOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
       )}
     </div>
   );
