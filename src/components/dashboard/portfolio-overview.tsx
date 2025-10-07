@@ -44,7 +44,7 @@ export default function PortfolioOverview() {
             </svg>
           </div>
           <div className="text-3xl font-bold mb-1">$0</div>
-          <div className="text-sm opacity-75">Net Value: $0</div>
+          <div className="text-sm opacity-75">Nt Value: $0</div>
         </Card>
 
         <Card className="p-4 md:p-6">
